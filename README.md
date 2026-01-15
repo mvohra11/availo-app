@@ -1,72 +1,109 @@
-🚀 Project Dashboard App
+<!DOCTYPE html>
+<body>
 
-A modern React + Vite + Supabase application for managing businesses, customers, and appointments. Built with TypeScript, shadcn-ui, and TailwindCSS for a clean and responsive UI.
+<h1>Availo – Business Management Dashboard</h1>
 
-🔑 Features
+<p>
+  Availo is a modern web application for managing businesses, services, customers, and appointments.
+  It was designed and built within a <strong>24-hour hackathon</strong>, with a focus on rapid development,
+  clean architecture, and practical real-world functionality.
+</p>
 
-📋 Authentication (Supabase Auth)
+<p>
+  The application provides authentication, data management, scheduling, and a dashboard interface with
+  filtering and sorting capabilities.
+</p>
 
-🗂️ Business & Services Management
+<hr />
 
-👤 Customer Records
+<h2>Features</h2>
+<ul>
+  <li>User authentication using Supabase Auth</li>
+  <li>Business and services management</li>
+  <li>Customer records management</li>
+  <li>Appointment scheduling system</li>
+  <li>Dashboard with sorting and filtering</li>
+  <li>Responsive UI using Tailwind CSS and shadcn/ui</li>
+  <li>Fast development and builds using Vite</li>
+</ul>
 
-📅 Appointments Scheduling
+<h2>Tech Stack</h2>
 
-📊 Dashboard with Sorting & Filtering
+<h3>Frontend</h3>
+<ul>
+  <li>React</li>
+  <li>Vite</li>
+  <li>TypeScript</li>
+</ul>
 
-🎨 UI with shadcn-ui + Tailwind
+<h3>Backend</h3>
+<ul>
+  <li>Supabase (PostgreSQL, Authentication, Storage)</li>
+</ul>
 
-⚡ Fast builds with Vite
+<h3>UI</h3>
+<ul>
+  <li>Tailwind CSS</li>
+  <li>shadcn/ui</li>
+</ul>
 
-🛠️ Tech Stack
+<h3>Hosting</h3>
+<ul>
+  <li>Lovable (supports custom domains)</li>
+</ul>
 
-Frontend: React + Vite + TypeScript
+<hr />
 
-Backend: Supabase (Postgres + Auth + Storage)
+<h2>Getting Started</h2>
 
-UI: Tailwind CSS + shadcn/ui
+<h3>1. Clone the repository</h3>
+<pre><code>git clone https://github.com/&lt;your-username&gt;/availo.git
+cd availo</code></pre>
 
-Hosting: Lovable (with option for custom domain)
+<h3>2. Install dependencies</h3>
+<pre><code>npm install</code></pre>
 
-📦 Getting Started
-1. Clone the repository
-git clone <YOUR_GIT_URL>
-cd <YOUR_PROJECT_NAME>
+<h3>3. Configure environment variables</h3>
 
-2. Install dependencies
-npm install
+<p>Create a <code>.env</code> file in the project root:</p>
 
-3. Set up environment variables
+<pre><code>VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key</code></pre>
 
-Create a .env file in the root:
+<p><strong>Important:</strong><br />
+Do not use or expose the Supabase <code>service_role</code> key in client applications.
+</p>
 
-VITE_SUPABASE_URL=https://<your-project>.supabase.co
-VITE_SUPABASE_ANON_KEY=<your-anon-key>
+<h3>4. Run the development server</h3>
 
+<pre><code>npm run dev</code></pre>
 
-⚠️ Important: Do not expose the service_role key — only the anon key is used in client apps.
+<p>The application will be available at:</p>
 
-4. Run locally
-npm run dev
+<pre><code>http://localhost:8080</code></pre>
 
+<hr />
 
-Your app will be available at http://localhost:8080.
+<h2>Project Structure</h2>
 
+<pre><code>src/
+ ├─ components/       Reusable UI components (shadcn-ui and custom)
+ ├─ pages/            Application pages (Dashboard, Login, etc.)
+ ├─ integrations/     Supabase client configuration
+ ├─ styles/           Tailwind CSS styles
+ └─ App.tsx           Application root component
+</code></pre>
 
-📂 Project Structure
-src/
- ├─ components/       # UI components (shadcn-ui, custom UI)
- ├─ pages/            # App pages (Dashboard, Login, etc.)
- ├─ integrations/     # Supabase client setup
- ├─ styles/           # Tailwind CSS styles
- └─ App.tsx           # Root component
+<hr />
 
-🔒 Security Notes
+<h2>Security Considerations</h2>
 
-Uses Supabase RLS (Row Level Security) policies for data protection
+<ul>
+  <li>Uses Supabase Row Level Security (RLS) policies for data access control</li>
+  <li>Authentication handled via JWT tokens stored in localStorage</li>
+  <li>Only public (anon) Supabase keys are used on the frontend</li>
+  <li>Sensitive keys must remain on the server side</li>
+</ul>
 
-JWT tokens stored in localStorage for session persistence
-
-Never expose service keys in frontend code
-
-Do you want me to also add step-by-step setup for the Supabase database schema (tables: business, services, customers, appointments) inside the README? That way new devs can bootstrap the backend too.
+</body>
+</html>
